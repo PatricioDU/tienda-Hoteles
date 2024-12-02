@@ -1,0 +1,171 @@
+.logo-menu-superior {
+    height: 40px;
+}
+
+.link-bloque {
+    display: inline-block; /* Mostrar como bloque en línea */
+    text-decoration: none !important; /* Eliminar subrayado del enlace */
+    color: inherit; /* Heredar el color del texto */
+    text-decoration: lin;
+}
+  
+.link-bloque:hover {
+    /* Estilos adicionales al pasar el mouse sobre el enlace */
+    cursor: pointer;
+    border: 1px solid lightblue;
+}
+
+.error-message {
+    color: red !important;
+    font-weight: bold !important;
+}
+
+.table-hover .letra-boleta-anulada td {
+    color: red !important;
+    font-weight: bold !important;
+}
+  
+.producto-sm {
+    width:  82px;
+    height: 70px;
+}
+
+.usuario-sm {
+    width:  82px;
+    height: 70px;
+}
+
+.inicio-producto-imagen {
+    max-width:  165px;
+    /* max-height: 139px; */
+}
+
+.inicio-producto-descripcion {
+    width: 200px; /* Ancho fijo para el contenedor */
+    white-space: nowrap; /* Evita que el texto se desborde */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) */
+}
+
+#cuadro-imagen {
+    max-width: 236px;
+    max-height: 199px;
+    padding: 3px;
+    border: 2px solid gray;
+}
+  
+.ancho-160px {
+    width: 160px;
+}
+
+.ancho-175px {
+    width: 175px;
+}
+
+.ancho-200px {
+    width: 200px;
+}
+
+.td_img_estado_boleta {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.td_fec_estado_boleta {
+    text-align: center;
+    font-size: 12px;
+}
+
+#id_direccion {
+    height: 130px;
+}
+
+.centrar-imagen-cargando-en-pantalla {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.ocultar-elemento {
+    display: none;
+}
+
+.capa-cubre-todo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #2C9ECC; */
+    background-color: #222222;
+    z-index: 10;
+}
+
+.menu-inferior {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.instrucciones-para-el-alumno {
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    background-color: yellow;
+    border: 3px solid darkgray;
+    margin: 4px;
+    /* display: none; */
+}
+
+.intro-container {
+    background: linear-gradient(135deg, #1e90ff, #ff6347);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .intro-container p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  .intro-container p:first-of-type {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  .container {
+    margin: 20px 0;
+  }
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: 20px;
+    width: 300px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+  }
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .contact-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+  }

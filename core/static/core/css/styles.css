@@ -1,0 +1,105 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+/* Navegación */
+nav {
+  background-color: #555;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #777;
+}
+
+/* Contenido principal */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+section {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #333;
+  font-size: 24px;
+}
+
+section p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Carrusel */
+.carousel {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+

@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  padding: 2rem 0;
+  background: #4CAF50;
+  color: white;
+}
+
+p {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: #555;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.card {
+  width: 18rem;
+  margin: 1rem;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+
+body {
+        font-family: 'Times New Roman', Times, serif,;
+        margin: 0;
+        padding: 5px;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 2rem 0;
+        background-color: #4CAF50;
+        color: rgb(255, 255, 255);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #000000;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+
+    .card {
+        width: 300px;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 1rem;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-20px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    label {
+      font-weight: bolder;
+    }
+    
+    .invalid-feedback,.error{
+      color:red;
+      font-weight: bolder;
+
+
+    }
+
+    .registro_foto {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .is-valid {
+      border-color: #28a745;
+  }
+  
+  .is-valid:focus {
+      border-color: #28a745;
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  }
+  

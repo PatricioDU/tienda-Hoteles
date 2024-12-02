@@ -1,0 +1,100 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block stylesheet %}
+<style>
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(3, 200, 10);
+  }
+  .btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  #imagen_producto {
+    margin-top: 10px;
+  }
+  
+  #id_imagen {
+    display: none;
+  }
+  
+  #crear_usuario_prueba {
+    margin-top: 10px;
+  }
+  
+</style>
+{%endblock stylesheet%}
+
+{% block content %}
+
+<div class="container-fluid full-width-title">
+  <h1>Mis Datos</h1>
+</div>
+
+<form id="form" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+  <div class="row">
+    <div class="col-sm-12 col-md-4 order-md-1 order-2">
+      {{form_usuario|as_bootstrap_form:'help_text_visible=False'}}
+    </div>
+
+    <div class="col-sm-12 col-md-5 order-md-2 order-1">
+      {{form_perfil|as_bootstrap_form}}
+    </div>
+
+    <div class="col-sm-12 col-md-3 text-center order-md-3 order-3">
+      <div class="row">
+        <div class="col-sm-12" style="height: 220px">
+          <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">Actualizar mis datos</button>
+    <button type="reset" class="btn btn-primary">Limpiar</button>
+    <div id="imagen_producto"></div>
+    <label for="id_imagen" class="form-label">Imagen del Producto</label>
+    <div id="error-imagen"></div>
+    <input type="file" class="form-control d-none" id="id_imagen" name="imagen" accept="image/*">
+    <button class="btn btn-primary mt-3" onclick="event.preventDefault(); document.getElementById('id_imagen').click();">Seleccionar imagen</button>
+  </div>
+</form>
+
+<div>
+  {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">
+      {{message}}
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'core/js/misdatos.js' %}"></script>
+{% endblock script %}

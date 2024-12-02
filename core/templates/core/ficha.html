@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'core/css/ficha.css' %}">
+    <style>
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(3, 200, 10);
+            }
+    </style>
+{% endblock stylesheet %}
+{% block content %}
+
+
+    <form method="post" id="formulario-ficha">
+
+        {% csrf_token %}
+
+        <div style="margin-top: 20px;">
+            <div style="width: 40rem; float: left; margin-right: 20px;">
+            <img src="/media/{{ imagen }}" class="card-img-top" style="height:auto">
+            </div>
+            <div class="card-body" style="width: 40rem; float: none; margin: 0 auto;">
+            <h5 class="card-title">{{ nombre }}</h5>
+            <h5 class="index_disponible card-title">{{html_stock }}</h5>
+            <h5 class="card-title">Precio: {{ html_precio|safe }}</h5>
+            
+            <h5 class="card-text">{{ descripcion }}</h5>
+            </div>
+        </div>
+
+        <div style="width: 40rem; float: none; margin: 0 auto;">
+            <input type="hidden" id="accion">
+            <a href="{% url 'comprar_ahora' %}" class="btn btn-primary ancho-160px">
+                Reservar
+            </a>
+            <a href="{% url 'agregar_producto_al_carrito' id %}" class="btn btn-secondary ancho-160px">
+                Reserva ahora!
+            </a>
+        </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static 'core/js/ficha.js' %}"></script>
+{% endblock script %}

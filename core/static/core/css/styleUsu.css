@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.user-form {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 0 400px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.user-form h1 {
+  margin-top: 0;
+}
+
+.user-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-form select,
+.user-form input[type="text"],
+.user-form input[type="email"],
+.user-form input[type="file"] {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+.user-form button {
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.user-form button:hover {
+  background-color: #444;
+}
+
+.user-table {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 0 600px;
+  padding: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  height: auto;
+}
+
+.user-table h1 {
+  margin-top: 0;
+}
+
+.user-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.user-table button {
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.user-table button:hover {
+  background-color: #444;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .user-form,
+  .user-table {
+    flex: 1 0 100%;
+    margin-right: 0;
+  }
+}
+
+.password-generator {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.password-generator input[type="text"] {
+  border: none;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.password-generator button {
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.password-generator button:hover {
+  background-color: #444;
+}
+
+.invalid-feedback,.error{
+  color:red;
+  font-weight: bolder;
+
+
+}
+
+footer {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(3, 200, 10);
+  position: auto;
+  width: 100%;
+  bottom: 0;
+}
+
+.full-width-title {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}

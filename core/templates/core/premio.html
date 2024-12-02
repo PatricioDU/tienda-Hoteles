@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block stylesheet %}
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'core/css/ropa.css' %}"
+    />
+{% endblock stylesheet %}
+{% block content %}
+
+<div class="full-width-title" style="text-align: center">
+  <h1>Concursa por una prenda para vestir</h1>
+  <h2>
+    Por compras superiores a $20000 en productos ya estás participando
+  </h2>
+</div>
+<!-- Agregamos un contenedor para las tarjetas de productos -->
+<div id="productos-container" class="container-fluid mt-5">
+  <div id="productos" class="row">
+    <!-- Las tarjetas de productos se agregarán aquí -->
+  </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir tu script JavaScript -->
+    <script src="{% static 'core/js/ropa.js' %}"></script>
+  
+{% endblock script %}

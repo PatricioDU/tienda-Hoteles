@@ -1,0 +1,323 @@
+{% extends 'core/base.html'%}
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'core/css/style.css' %}"
+    />
+    <style>
+      footer {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 20px;
+        background-color: rgb(3, 200, 10);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TutoShop</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html"
+                target="_blank"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="administracion.html"
+                target="_blank"
+                >Administracion</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="carrito.html"
+                target="_blank"
+                >Carrito</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="miscompras.html"
+                target="_blank"
+                >Mis compras</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="registro.html"
+                target="_blank"
+                >Registro</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="misdatos.html"
+                target="_blank"
+                >Mis Datos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="productos.html"
+                target="_blank"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ropa.html"
+                target="_blank"
+                >Ropa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="usuarios.html"
+                target="_blank"
+                >Usuarios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="boleta.html"
+                target="_blank"
+                >Boleta</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="nosotros.html"
+                target="_blank"
+                >Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ingresar.html"
+                target="_blank"
+                >Ingresar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="menu"></div>
+
+    <h1>Registro de Cliente</h1>
+
+    <form
+      id="formulario-registro"
+      class="row g-3 needs-validation"
+      novalidate
+      style="margin-top: 20px"
+    >
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Campos del formulario -->
+          <div class="col-sm-6">
+            <!-- Campo RUT -->
+            <div class="mb-3" style="margin-bottom: 20px">
+              <label for="rut" class="form-label">RUT</label>
+              <input
+                required
+                placeholder="Ej: 11123123-K"
+                type="text"
+                class="form-control"
+                id="rut"
+                name="rut"
+              />
+            </div>
+
+            <!-- Campo Nombre -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                required
+                placeholder="Ej: Juan"
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+              />
+            </div>
+
+            <!-- Campo Apellido -->
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input
+                required
+                placeholder="Ej: González"
+                type="text"
+                class="form-control"
+                id="apellido"
+                name="apellido"
+              />
+            </div>
+
+            <!-- Campo Correo -->
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo</label>
+              <input
+                required
+                placeholder="Ej: jgonzalez@gmail.com"
+                type="email"
+                class="form-control"
+                id="correo"
+                name="correo"
+              />
+            </div>
+
+            <!-- Campo Dirección -->
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección</label>
+              <textarea
+                required
+                placeholder="Ej: Calle San Pedro 425, La Florida"
+                class="form-control"
+                rows="3"
+                id="direccion"
+                name="direccion"
+              ></textarea>
+            </div>
+
+            <!-- Campo Subscrito -->
+            <div class="mb-3">
+              <label for="subscrito" class="form-label">Con subscripción</label>
+              <input type="checkbox" id="subscrito" name="subscrito" />
+              <div id="subscritoHelp" class="form-text">
+                Deseo subscribirme con un aporte de $5.000 mensuales y obtener
+                un 5% de descuento en mis compras.
+              </div>
+            </div>
+
+            <!-- Campo Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                required
+                placeholder="Escribe aquí tu contraseña"
+                class="form-control"
+                id="password"
+                name="password"
+              />
+            </div>
+
+            <!-- Campo Repetir Contraseña -->
+            <div class="mb-3">
+              <label for="password2" class="form-label"
+                >Repetir contraseña</label
+              >
+              <input
+                type="password"
+                required
+                placeholder="Repite aquí tu contraseña"
+                class="form-control"
+                id="password2"
+                name="password2"
+              />
+            </div>
+          </div>
+
+          <!-- Foto de perfil -->
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <div id="foto-cliente"></div>
+              <input
+                type="file"
+                class="form-control"
+                id="imagen"
+                name="imagen"
+                accept="image/*"
+              />
+              <div id="imagenHelp" class="form-text">
+                Seleccione una imagen de perfil.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="reset" class="btn btn-primary">Limpiar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <footer>
+      <p>
+        WhatsApp +56 95266 2566 - Facebook - Instagram - Moneda 627, Santiago
+      </p>
+    </footer>
+
+    <!-- Incluir jQuery antes de validar.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="{% static 'core/js/validar.js' %}"></script>
+  </body>
+</html>

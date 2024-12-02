@@ -1,0 +1,76 @@
+{% extends 'core/base.html'%}
+{%load static%}
+
+{%block content%}
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Mínimo 100% de la altura del viewport */
+      }
+
+      .container {
+        flex: 1; /* Para que ocupe todo el espacio disponible */
+      }
+      .full-width-title {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid full-width-title">
+      <h1>TutoShop</h1>
+    </div>
+    <div class="container mt-5">
+      <h1 class="text-center">Administrar Tienda</h1>
+
+      <div class="row">
+        <div class="col-12">
+          <ul class="list-group mt-3">
+            <li class="list-group-item">
+              <a href="{% url 'usuarios'%}">Mantenedor de usuarios</a>
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'productos' %}">Mantenedor de productos</a>
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'ventas'%}">Historia de ventas</a>
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'bodega'%}">Mantenedor de bodega</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+{%endblock content%}
+
+{%block scripts%}
+    <script src="{% static 'core/js/admi.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        $("form").validate();
+        $.validator.addMethod(
+          "validURL",
+          function (value, element) {
+            return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(
+              value
+            );
+          },
+          "Ingrese una URL válida."
+        );
+        $("li.list-group-item a").each(function () {
+          $(this).click(function (e) {
+            e.preventDefault();
+            var href = $(this).attr("href");
+            window.location.href = href;
+          });
+        });
+      });
+    </script>
+{%endblock scripts%}

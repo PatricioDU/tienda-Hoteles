@@ -1,0 +1,119 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<style>
+
+  .intro-container {
+    background: linear-gradient(135deg, #00FF7F, #006400);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  .intro-container p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  .intro-container p:first-of-type {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  .container {
+    margin: 20px 0;
+  }
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: 20px;
+    width: 300px;
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+  }
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .contact-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
+</style>
+{% endblock stylesheet %}
+
+{% block content %}
+  
+<div class="container-fluid full-width-title">
+  <h1>Nosotros</h1>
+</div>
+<div class="intro-container">
+  <p>
+    Bienvenido a nuestro hotel, donde el lujo, la comodidad y el servicio excepcional se combinan para ofrecerte una experiencia inolvidable. Situado en el corazón de la ciudad, nuestro hotel es el lugar ideal para hospedarse, ya sea por negocios o placer.
+  </p>
+  <p>
+    Nuestro equipo de profesionales está dedicado a proporcionarte el más alto nivel de atención y servicio personalizado. Desde nuestras elegantes habitaciones hasta nuestras instalaciones de primera clase, cada detalle está pensado para satisfacer tus necesidades y superar tus expectativas.
+  </p>
+  <p>
+    Con una variedad de servicios que incluyen un restaurante gourmet, spa, gimnasio y salas de eventos, estamos equipados para ofrecerte una estancia excepcional. Descubre el lugar perfecto para relajarte, trabajar y disfrutar de momentos inolvidables con nosotros.
+  </p>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <img src="{% static 'core/img/Takehiko_Inoue_20240312_(cropped).jpg' %}" alt="Gerente del Hotel" style="height:300px"/>
+    <div class="card-body">
+      <h5 class="card-title">Rodrigo Riveros</h5>
+      <p class="card-text">Gerente General</p>
+      <p class="card-text overflow-auto" style="max-height: 180px">
+        Rodrigo Riveros es un profesional dedicado con años de experiencia en la industria hotelera. Con su liderazgo y visión, ha transformado nuestro hotel en un referente de calidad y excelencia en servicio. Fuera del trabajo, Rodrigo disfruta de la gastronomía y de viajar.
+      </p>
+      <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:rodr.riveros@duocuc.cl'">
+        Contactar
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'core/img/Shigeru-Miyamoto-2.webp' %}" alt="CEO" style="height:300px"/>
+    <div class="card-body">
+      <h5 class="card-title">Patricio Gonzalez</h5>
+      <p class="card-text">CEO</p>
+      <p class="card-text overflow-auto" style="max-height: 180px">
+        Patricio González es el motor detrás de nuestra misión de ofrecer experiencias excepcionales a nuestros huéspedes. Con su enfoque estratégico y su compromiso con la innovación, ha llevado a nuestro hotel a nuevas alturas. Patricio es un apasionado del turismo y la hospitalidad.
+      </p>
+      <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:pata.gonzalez@duocuc.cl'">
+        Contactar
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'core/img/images.jpeg' %}" alt="Community Manager" style="height:300px"/>
+    <div class="card-body">
+      <h5 class="card-title">Daniel</h5>
+      <p class="card-text">Community Manager</p>
+      <p class="card-text overflow-auto" style="max-height: 180px">
+        Daniel es el encargado de crear y mantener una comunidad vibrante y acogedora alrededor de nuestro hotel. Con su carisma y dedicación, se asegura de que cada huésped se sienta valorado y atendido. Daniel también organiza eventos especiales y actividades para enriquecer la estancia de nuestros visitantes.
+      </p>
+      <button class="btn btn-primary contact-button" onclick="window.location.href='mailto:daniel@example.com'">
+        Contactar
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,168 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{%block stylesheet%}
+<style>
+  .user-table1 {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 60px;
+    width: calc(100% - 120px);
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .user-table1 h1 {
+    margin-top: 0;
+  }
+  
+  .user-table1 table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .user-table1 th,
+  .user-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .user-table1 th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .user-table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .user-table1 button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .user-table1 button:hover {
+    background-color: #444;
+  }
+  
+  @media (max-width: 768px) {
+    .user-table1 {
+      margin: 20px;
+      width: calc(100% - 40px);
+    }
+  }
+</style>
+
+{%endblock stylesheet%}
+
+{% block content %}
+
+
+<div class="container-fluid full-width-title">
+  <h1>Mantenedor De Productos</h1>
+</div>
+
+  <form id="form" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+       <div class="container mt-5">
+          <form id="productForm" class="row g-3 needs-validation" novalidate style="margin-top: 20px;">
+    
+                <!-- Campos del formulario -->
+                <section class="user-form">
+                  <div class="form-group">
+                    {{form|as_bootstrap_form}}
+                    
+                    <!-- Campo Imagen -->
+                    <div class="col-md-4">
+                      <div class="mb-3">
+                        <div id="imagen_producto"></div>
+                        <label for="id_imagen" class="form-label">Imagen del Producto</label>
+                        <div id="error-imagen"></div>
+                        <div class="col-sm-12" style="height: 220px">
+                          <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
+                        </div>
+                        <input type="file" class="form-control d-none" id="id_imagen" name="imagen" accept="image/*">
+                        <button class="btn btn-primary mt-4" onclick="event.preventDefault(); document.getElementById('id_imagen').click();">Seleccionar imagen</button>
+                        <div id="imagenHelp" class="form-text">
+                          Seleccione una imagen del producto.
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="reset" class="btn btn-primary">Limpiar</button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                  {% for message in messages%}
+                    <div class="alert alert-{{message.tags}}">
+                      {{message}}
+                    </div>
+                  {% endfor %}
+                  </div>
+                
+               
+              </div>
+            </div>
+          </form>
+        </div>
+      
+  
+    <table id="tabla-principal" class="table user-table1">
+      <thead>
+        <tr>
+            <th> ID </th>
+            <th> Categoría </th>
+            <th> Nombre </th>
+            <th> Descripción </th>
+            <th> Precio </th>
+            <th> %Subs </th>
+            <th> %Oferta </th>
+            <th> Imagen </th>
+            <th> Editar </th>
+            <th> Eliminar </th>
+        </tr>
+    </thead>
+      <tbody>
+         {%for producto in productos %}
+        <tr>
+          <td>{{producto.id}}</td>
+          <td>{{producto.categoria}}</td>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.descripcion}}</td>
+          <td>{{producto.precio|formatear_dinero}}</td>
+          <td>{{producto.descuento_subscriptor|formatear_porcentaje}}</td>
+          <td>{{roducto.descuento_oferta|formatear_porcentaje}}</td>
+          <td>
+            <img src="/media/{{ producto.imagen }}" class="producto-sm" alt="">
+         </td>
+         <td>
+            <a href="{% url 'productos' 'actualizar' producto.id %}" class="btn btn-primary btn-sm"> Editar </a>
+         </td>
+         <td>
+           <form method="delete">        
+              <a href="{%url 'productos' 'eliminar' producto.id%}" type="submit" class="btn btn-danger">eliminar</a>
+          </form>
+        </td>
+        </tr>
+        {% endfor %}	
+      </tbody>
+    </table>
+  </form>  
+{% endblock content %}    
+   
+{% block script %}
+  <script src="{% static 'core/js/productos.js' %}">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+{% endblock script %}

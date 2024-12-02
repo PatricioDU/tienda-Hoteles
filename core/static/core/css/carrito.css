@@ -1,0 +1,23 @@
+footer {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(3, 200, 10);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+  }
+  .card {
+    margin-top: 20px;
+  }
+  table {
+    font-weight: bold;
+  }
